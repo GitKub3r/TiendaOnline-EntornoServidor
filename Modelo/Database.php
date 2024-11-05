@@ -1,6 +1,6 @@
 <?php
 
-class database
+class Database
 {
     private static $servername = "localhost:3306";
     private static $username = "root";
