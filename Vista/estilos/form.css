@@ -1,0 +1,107 @@
+/* Contenedor general del formulario */
+form {
+    width: 400px; /* Ancho fijo para el formulario */
+    margin: 80px auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    background-color: var(--light-white); /* Fondo blanco más claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+}
+
+/* Estilo del título del formulario */
+form h1 {
+    font-size: 1.8em;
+    color: var(--pastel-red);
+    margin-bottom: 20px;
+}
+
+/* Contenedor para cada campo de entrada */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    flex: 1; /* Permite que los grupos ocupen el espacio disponible */
+    margin-right: 10px; /* Margen a la derecha para separar los grupos */
+}
+
+/* Nueva clase para contener dos form-group en una misma fila */
+.form-group-container {
+    display: flex; /* Utiliza flexbox para alinear los hijos */
+    justify-content: space-between; /* Espacio entre los grupos */
+    margin-bottom: 15px; /* Margen inferior para separar de otros elementos */
+}
+
+.form-group-container .form-group {
+    width: 48%;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Campos de entrada */
+.form-group input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--pastel-red);
+}
+
+/* Botones */
+form button {
+    padding: 10px 20px;
+    margin: 15px 0; /* Espaciado vertical entre los botones */
+    width: 100%; /* Establecer ancho del botón al 100% del contenedor */
+    border: none;
+    border-radius: 5px;
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--pastel-red-contrast);
+}
+
+form button[type="reset"] {
+    background-color: var(--soft-white);
+    color: var(--pastel-red);
+    border: 1px solid var(--pastel-red);
+}
+
+form button[type="reset"]:hover {
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+}
+
+
+/* Enlace al registro */
+form span {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+form span a {
+    color: var(--pastel-red);
+    text-decoration: none;
+}
+
+form span a:hover {
+    text-decoration: underline;
+}

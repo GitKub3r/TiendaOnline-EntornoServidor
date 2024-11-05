@@ -1,0 +1,90 @@
+@import url('variables.css');
+
+*::selection {
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    background-color: var(--soft-white);
+    margin: 0;
+    padding: 0;
+}
+
+/* Color de fondo por defecto en toda la página */
+html, body {
+    background-color: var(--soft-white);
+}
+
+/* Estilo para títulos generales */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--pastel-red);
+    margin: 0;
+}
+
+/* estilos generales para enlaces */
+a {
+    color: var(--pastel-red);
+    text-decoration: none;
+}
+
+.link {
+    position: relative;
+    color: var(--pastel-red); /* Usa el rojo pastel como color principal */
+    text-decoration: none;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--pastel-red); /* Usa el rojo pastel para la línea de subrayado */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;  /* Expande la línea a todo el ancho del enlace */
+    left: 0;
+}
+
+/* Espaciado general entre secciones */
+.section {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo por defecto para <hr> en la página */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color); /* Color de borde suave */
+    margin: 20px 0; /* Margen vertical general */
+}
+
+/* Estilos para centrar el contenido de title-group */
+.title-group {
+    text-align: center; /* Centrar el texto horizontalmente */
+    margin: 3.5rem 0; /* Espacio superior e inferior para separar del resto del contenido */
+}
+
+.title-group h1 {
+    font-size: 3rem; /* Tamaño grande para el título */
+    color: var(--pastel-red); /* Color principal para el título */
+    margin: 0; /* Quita el margen para ajustar mejor la posición */
+}
+
+.title-group span {
+    display: block; /* Asegura que el span esté en una nueva línea debajo del h1 */
+    font-size: 1em; /* Tamaño de texto para el subtítulo */
+    color: var(--text-color); /* Color de texto secundario */
+}
+

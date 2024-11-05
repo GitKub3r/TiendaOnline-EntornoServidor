@@ -1,0 +1,49 @@
+/* Estilos para el header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--pastel-red); /* Fondo rojo pastel */
+    color: var(--soft-white); /* Texto en blanco suave */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--soft-white); /* Texto del título en blanco suave */
+}
+
+.main-header nav a {
+    border-radius: 5px;
+    color: var(--soft-white); /* Color de texto de enlaces en blanco suave */
+    text-decoration: none;
+}
+
+.main-header-menu {
+    display: flex;
+    gap: 3rem; /* Espacio entre elementos del menú */
+}
+
+.main-header-menu .link {
+    position: relative;
+    color: var(--soft-white);
+    text-decoration: none;
+}
+
+/* Estilo y animación para los enlaces del header */
+.main-header-menu .link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--soft-white); /* Línea subrayada en blanco suave */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.main-header-menu .link:hover::after {
+    width: 100%; /* Ancho completo del subrayado en hover */
+    left: 0;
+}

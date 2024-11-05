@@ -1,0 +1,45 @@
+/* Estilos para el footer */
+.main-footer {
+    background-color: var(--dark-gray); /* Fondo gris oscuro */
+    color: var(--soft-white); /* Texto en blanco suave */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Asegúrate de que el footer se mantenga al final de la página */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer al final del contenedor */
+}
+
+.main-footer h2 {
+    margin: 0;
+    color: var(--soft-white);
+}
+
+/* Estilos específicos del <hr> en el footer */
+.main-footer hr {
+    width: 80%; /* Ancho ajustado para el contenido */
+    border: none;
+    border-top: 1px solid var(--soft-white); /* Línea delgada en blanco suave */
+    margin: 20px auto; /* Centrado y margen vertical */
+}
+
+/* Contenedor para contacto */
+.main-footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre el correo y el teléfono */
+    margin-top: 10px;
+}
+
+.main-footer-contact span {
+    color: var(--soft-white);
+    font-size: 0.9em;
+}

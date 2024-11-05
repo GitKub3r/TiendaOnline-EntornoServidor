@@ -1,0 +1,11 @@
+:root {
+    --pastel-red: #f04239;
+    --pastel-red-contrast: #e9271c;
+    --soft-white: #e3e3e3;
+    --light-white: #eaeaea; /* Nuevo color blanco más claro para el fondo del formulario */
+    --dark-gray: #333333;
+    --text-color: #333;
+    --border-color: #ddd;
+    --font-size: 16px;
+    --line-height: 1.6;
+}

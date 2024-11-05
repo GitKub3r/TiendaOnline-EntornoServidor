@@ -1,0 +1,17 @@
+.main-content {
+    text-align: center;
+}
+
+/* Estilos para la sección principal de contenido */
+.shop-content {
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla, dejando un margen en los lados */
+    max-width: 1200px; /* Define un ancho máximo para pantallas grandes */
+    margin: 40px auto; /* Centra el contenido horizontalmente y da margen vertical */
+    padding: 20px; /* Espacio interno para que el contenido no toque los bordes */
+
+    background-color: var(--soft-white); /* Fondo blanco suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}

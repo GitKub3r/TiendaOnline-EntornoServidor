@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="stylesheet" href="estilos/main-header.css">
+  <link rel="stylesheet" href="estilos/main-footer.css">
+  <link rel="stylesheet" href="estilos/form.css">
+</head>
+<body>
+<header class="main-header">
+  <a href="landing-page.php">
+    <h1>Shop-In</h1>
+  </a>
+</header>
+
+<form action="" method="post">
+  <h1>Create your account</h1>
+
+  <div class="form-group">
+    <label for="new-username">Username</label>
+    <input type="text" name="new-username" id="new-username" required>
+  </div>
+
+  <div class="form-group-container">
+    <div class="form-group">
+      <label for="new-email">Email</label>
+      <input type="email" name="new-email" id="new-email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="new-tel">Telephone Number</label>
+      <input type="tel" name="new-tel" id="new-tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="new-password">Password</label>
+    <input type="password" name="new-password" id="new-password">
+  </div>
+
+  <span>Have an account? <a href="signin-page.html">Sign in</a> here</span>
+
+  <button type="submit">Sign In</button>
+  <button type="reset">Reset</button>
+</form>
+
+<footer class="main-footer">
+  <h2>Copyright &copy; 2024 Shop-In Company</h2>
+
+  <hr>
+
+  <div class="main-footer-contact">
+    <span>Email: <u>shopincompanyspain@gmail.com</u></span>
+    <span>Phone Number: <u>+34 664 283 972</u></span>
+  </div>
+</footer>
+</body>
+</html>
