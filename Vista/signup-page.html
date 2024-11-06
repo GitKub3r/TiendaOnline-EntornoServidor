@@ -21,20 +21,18 @@
   <div class="form-group-container">
     <div class="form-group">
       <label for="new-name">Name</label>
-      <input type="text" name="new-name" id="new-name" required>
+      <input type="text" name="new-name" id="new-name" pattern="^[a-zA-Z0-9]+$" required>
     </div>
 
     <div class="form-group">
       <label for="new-surname">Surname</label>
-      <input type="text" name="new-surname" id="new-surname" required>
+      <input type="text" name="new-surname" id="new-surname" pattern="^[a-zA-Z0-9]+$" required>
     </div>
   </div>
 
-
-
   <div class="form-group">
     <label for="new-username">Username</label>
-    <input type="text" name="new-username" id="new-username" required>
+    <input type="text" name="new-username" id="new-username" pattern="^[a-zA-Z0-9]+$" required>
   </div>
 
   <div class="form-group-container">
@@ -51,7 +49,7 @@
 
   <div class="form-group">
     <label for="new-password">Password</label>
-    <input type="password" name="new-password" id="new-password">
+    <input type="password" name="new-password" id="new-password" pattern="[A-Za-z0-9!?-]{8,}">
   </div>
 
   <span>Have an account? <a href="signin-page.html">Sign in</a> here</span>
