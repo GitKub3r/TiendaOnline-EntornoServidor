@@ -16,7 +16,6 @@ class ClienteDAO
         $stmt->execute();
 
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
-
         if ($fila) {
             $cliente = new ClienteDTO($fila["nickname"], $fila["password"]);
             $cliente->setNombre($fila["nombre"]);
@@ -29,28 +28,14 @@ class ClienteDAO
         }
     }
 
-    public function getClienteByNickname($nickname, $password) {
+    public function getClienteByNickname($cliente) {
         $stmt = $this->connection->prepare("SELECT * FROM cliente WHERE nickname = :nickname");
 
-        $stmt->bindParam(":nickname", $nickname);
+        $stmt->bindParam(":nickname", $cliente->getNickname());
         $stmt->execute();
 
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
-        $sha1 = sha1($password);
-
-        if ($fila) {
-            if ($fila["password"] == $sha1) {
-                $cliente = new ClienteDTO($fila["nickname"], $fila["password"]);
-                $cliente->setId($fila["id"]);
-
-                return $cliente;
-            } else {
-                $cliente = new ClienteDTO($fila["nickname"], null);
-                return $cliente;
-            }
-        } else {
-            return null;
-        }
+        return $fila;
     }
 
     public function addCliente($cliente) {
