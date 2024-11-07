@@ -1,0 +1,119 @@
+/* Contenedor principal del perfil */
+.profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre la columna y el formulario */
+    padding: 40px;
+    background-color: var(--light-background); /* Fondo general más claro */
+}
+
+/* Estilo para la columna de perfil */
+.profile-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* Ancho fijo */
+    background-color: var(--light-white); /* Fondo igual que el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-sizing: border-box;
+}
+
+.profile-col-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: var(--border-color); /* Color de fondo de imagen vacía */
+}
+
+.profile-col h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.profile-col hr {
+    width: 90%;
+    background-color: #2a2a2a;
+    padding: .5px;
+}
+
+/* Botones en profile-col */
+.profile-col button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-col button:hover {
+    background-color: var(--pastel-red-contrast);
+}
+
+/* Formulario de perfil */
+.profile-box {
+    flex: 1;
+    background-color: var(--light-white); /* Fondo igual que la columna de perfil */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Contenedor de grupos de formulario (para inputs alineados) */
+.form-group-container {
+    display: flex;
+    gap: 20px; /* Espacio entre los campos */
+}
+
+/* Estilos para form-group e inputs */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    background-color: var(--soft-white);
+}
+
+/* Botón de confirmación en el formulario */
+.profile-box button[type="submit"] {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-box button[type="submit"]:hover {
+    background-color: var(--pastel-red-contrast);
+}
