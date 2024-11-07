@@ -1,6 +1,6 @@
 <?php
 
-require "Modelo/ClienteDAO.php";
+require "../Modelo/ClienteDAO.php";
 
 class ControlCliente
 {
