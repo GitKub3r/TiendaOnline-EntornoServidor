@@ -1,5 +1,10 @@
 <?php
+    /*session_start();
 
+    if (!$_SESSION["logged"]) {
+        header("Location: signin-page.html");
+        exit();
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -28,42 +33,43 @@
 
     <div class="profile-content">
         <form class="profile-col" action="../Controlador/ControlCliente.php" method="POST">
-            <img src="../Recursos/Imagenes/not-logged-in-1-48.png" alt="profile-picture" class="profile-col-img">
-            <h2>Your username</h2>
+            <div class="profile-info">
+                <img src="../Recursos/Imagenes/not-logged-in-1-48.png" alt="profile-picture" class="profile-col-img">
+                <h2>Your username</h2>
+            </div>
 
-            <hr>
-
-            <button>Edit</button>
             <button type="submit" value="logout">Log Out</button>
         </form>
 
         <form class="profile-box" action="" method="POST">
-            <div class="form-group-container">
-                <div class="form-group">
-                    <label for="profile-name">Name</label>
-                    <input type="text" name="profile-name" id="profile-name" required disabled>
+            <div class="profile-info">
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="profile-name">Name</label>
+                        <input type="text" name="profile-name" id="profile-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profile-surname">Surname</label>
+                        <input type="text" name="profile-surname" id="profile-surname" required>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="profile-surname">Surname</label>
-                    <input type="text" name="profile-surname" id="profile-surname" required disabled>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="profile-nickname">Nickname</label>
-                <input type="text" name="profile-nickname" id="profile-nickname" required disabled>
-            </div>
-
-            <div class="form-group-container">
-                <div class="form-group">
-                    <label for="profile-telephone">Phone Number</label>
-                    <input type="text" name="profile-telephone" id="profile-telephone" required disabled>
+                    <label for="profile-nickname">Nickname</label>
+                    <input type="text" name="profile-nickname" id="profile-nickname" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="profile-direction">Direction</label>
-                    <input type="text" name="profile-direction" id="profile-direction" required disabled>
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="profile-telephone">Phone Number</label>
+                        <input type="text" name="profile-telephone" id="profile-telephone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profile-direction">Direction</label>
+                        <input type="text" name="profile-direction" id="profile-direction" required>
+                    </div>
                 </div>
             </div>
 

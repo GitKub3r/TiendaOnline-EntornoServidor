@@ -5,7 +5,6 @@
     align-items: center;
     gap: 20px; /* Espacio entre la columna y el formulario */
     padding: 40px;
-    background-color: var(--light-background); /* Fondo general más claro */
 }
 
 /* Estilo para la columna de perfil */
@@ -13,7 +12,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 25%; /* Ancho fijo */
+    height: 400px;
     background-color: var(--light-white); /* Fondo igual que el formulario */
     padding: 20px;
     border-radius: 8px;
@@ -35,17 +36,11 @@
     color: var(--text-color);
 }
 
-.profile-col hr {
-    width: 90%;
-    background-color: #2a2a2a;
-    padding: .5px;
-}
-
 /* Botones en profile-col */
 .profile-col button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 15px 0;
     background-color: var(--pastel-red);
     color: var(--soft-white);
     border: none;
@@ -61,6 +56,7 @@
 
 /* Formulario de perfil */
 .profile-box {
+    height: 400px;
     flex: 1;
     background-color: var(--light-white); /* Fondo igual que la columna de perfil */
     padding: 20px;
@@ -70,6 +66,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* Contenedor de grupos de formulario (para inputs alineados) */
@@ -99,21 +96,4 @@
     font-size: 1em;
     outline: none;
     background-color: var(--soft-white);
-}
-
-/* Botón de confirmación en el formulario */
-.profile-box button[type="submit"] {
-    padding: 10px;
-    margin-top: 20px;
-    background-color: var(--pastel-red);
-    color: var(--soft-white);
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.profile-box button[type="submit"]:hover {
-    background-color: var(--pastel-red-contrast);
 }
