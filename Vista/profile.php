@@ -34,7 +34,7 @@
             <hr>
 
             <button>Edit</button>
-            <button>Log Out</button>
+            <button type="submit" value="logout">Log Out</button>
         </form>
 
         <form class="profile-box" action="" method="POST">

@@ -1,7 +1,7 @@
 <?php
 
 require_once "Database.php";
-require_once "Cliente.php";
+require_once "ClienteDTO.php";
 
 class ClienteDAO
 {
