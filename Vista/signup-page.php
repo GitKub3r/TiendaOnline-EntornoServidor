@@ -23,7 +23,7 @@
   </a>
 </header>
 
-<form action="../Controlador/ControlPeticiones.php" method="post">
+<form action="../Controlador/ControlPeticionesCliente.php" method="post">
   <h1>Create your account</h1>
 
   <div class="form-group-container">

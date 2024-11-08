@@ -2,12 +2,14 @@
 
 session_start();
 
-require "ControlCliente.php";
-require "../Modelo/ClienteDTO.php";
+require_once "ControlCliente.php";
+require_once "../Modelo/ClienteDTO.php";
 
 $usernameField = isset($_POST["username"]) ? $_POST["username"] : "";
 $passwordField = isset($_POST["password"]) ? $_POST["password"] : "";
 $button = isset($_POST["action-button"]) ? $_POST["action-button"] : "";
+
+$clientControl = new ControlCliente();
 
 if ($button == "logout") {
     session_destroy();
@@ -27,12 +29,11 @@ if ($button == "logout") {
     $newClient->setDomicilio($directionField);
     $newClient->setTelefono($telephoneField);
 
-    $this->ControlCliente->addClient($newClient);
+    $clientControl->addCliente($newClient);
     header("Location: ../Vista/signin-page.php");
     exit();
 }
 
-$clientControl = new ControlCliente();
 $client = new ClienteDTO($usernameField, $passwordField);
 
 $result = $clientControl->getClienteByNickname($client);

@@ -44,7 +44,7 @@
 </header>
 
     <div class="profile-content">
-        <form class="profile-col" action="../Controlador/ControlPeticiones.php" method="POST">
+        <form class="profile-col" action="../Controlador/ControlPeticionesCliente.php" method="POST">
             <div class="profile-info">
                 <img src="../Recursos/Imagenes/pfp-black.png" alt="profile-picture" class="profile-col-img">
                 <h2>
