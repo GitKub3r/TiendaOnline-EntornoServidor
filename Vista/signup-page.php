@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION["login-error"])) {
+        session_destroy();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +60,7 @@
     <input type="password" name="new-password" id="new-password" pattern="[A-Za-z0-9!?-]{8,}" required>
   </div>
 
-  <span>Have an account? <a href="signin-page.html">Sign in</a> here</span>
+  <span>Have an account? <a href="signin-page.php">Sign in</a> here</span>
 
   <button type="submit">Sign In</button>
   <button type="reset">Reset</button>

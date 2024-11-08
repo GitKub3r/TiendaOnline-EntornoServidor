@@ -26,4 +26,8 @@ class ControlCliente
             return null;
         }
     }
+
+    public function getClienteByID($id) {
+       return $this->ClienteDAO->getClienteById($id);
+    }
 }

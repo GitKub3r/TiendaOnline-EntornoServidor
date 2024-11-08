@@ -1,9 +1,13 @@
 <?php
+    require "../Controlador/ControlCliente.php";
+    $clientController = new ControlCliente();
     session_start();
 
     if (!$_SESSION["logged"]) {
-        header("Location: signin-page.html");
+        header("Location: signin-page.php");
         exit();
+    } else {
+        $client = $clientController->getClienteByID($_SESSION["logged"]);
     }
 ?>
 
@@ -19,26 +23,38 @@
     <link rel="stylesheet" href="estilos/form.css">
 </head>
 <body>
-    <header class="main-header">
-        <a href="landing-page.php">
-            <h1>Shop-In</h1>
-        </a>
+<header class="main-header">
+    <a href="landing-page.php">
+        <h1>Shop-In</h1>
+    </a>
 
-        <nav class="main-header-menu">
-            <a href="" class="link">Acciones</a>
-            <a href="" class="link">Carrito</a>
-            <a href="signin-page.html" class="link">Cuenta</a>
-        </nav>
-    </header>
+    <nav class="main-header-menu">
+        <a href="" class="link">Acciones</a>
+        <a href="" class="link">Carrito</a>
+
+        <?php
+
+        if (isset($_SESSION["logged"])) {
+            print "<a href='profile.php'><img width='30px' alt='pfp' src='../Recursos/Imagenes/pfp-white.png'/></a>";
+        } else {
+            print "<a class='link' href='signin-page.php'>Log In</a>";
+        }
+        ?>
+    </nav>
+</header>
 
     <div class="profile-content">
-        <form class="profile-col" action="../Controlador/ControlCliente.php" method="POST">
+        <form class="profile-col" action="../Controlador/ControlPeticiones.php" method="POST">
             <div class="profile-info">
-                <img src="../Recursos/Imagenes/not-logged-in-1-48.png" alt="profile-picture" class="profile-col-img">
-                <h2>Your username</h2>
+                <img src="../Recursos/Imagenes/pfp-black.png" alt="profile-picture" class="profile-col-img">
+                <h2>
+                    <?php
+                        print $client->getNickname();
+                    ?>
+                </h2>
             </div>
 
-            <button type="submit" value="logout">Log Out</button>
+            <button type="submit" value="logout" name="logout-button">Log Out</button>
         </form>
 
         <form class="profile-box" action="" method="POST">
@@ -46,29 +62,49 @@
                 <div class="form-group-container">
                     <div class="form-group">
                         <label for="profile-name">Name</label>
-                        <span id="profile-name">Your Name</span>
+                        <span id="profile-name">
+                            <?php
+                                print $client->getNombre();
+                            ?>
+                        </span>
                     </div>
 
                     <div class="form-group">
                         <label for="profile-surname">Surname</label>
-                        <span id="profile-surname">Your Surname</span>
+                        <span id="profile-surname">
+                            <?php
+                                print $client->getApellido();
+                            ?>
+                        </span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="profile-nickname">Nickname</label>
-                    <span id="profile-nickname">Your Nickname</span>
+                    <span id="profile-nickname">
+                        <?php
+                            print $client->getNickname();
+                        ?>
+                    </span>
                 </div>
 
                 <div class="form-group-container">
                     <div class="form-group">
                         <label for="profile-telephone">Phone Number</label>
-                        <span id="profile-telephone">Your Phone Number</span>
+                        <span id="profile-telephone">
+                            <?php
+                                print $client->getTelefono();
+                            ?>
+                        </span>
                     </div>
 
                     <div class="form-group">
                         <label for="profile-direction">Direction</label>
-                        <span id="profile-direction">Your Direction</span>
+                        <span id="profile-direction">
+                            <?php
+                                print $client->getDomicilio();
+                            ?>
+                        </span>
                     </div>
                 </div>
             </div>

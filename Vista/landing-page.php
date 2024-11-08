@@ -17,7 +17,16 @@
         <nav class="main-header-menu">
             <a href="" class="link">Acciones</a>
             <a href="" class="link">Carrito</a>
-            <a href="signin-page.html" class="link">Cuenta</a>
+
+            <?php
+                session_start();
+
+                if (isset($_SESSION["logged"])) {
+                    print "<a href='profile.php'><img width='30px' height='30px' alt='pfp' src='../Recursos/Imagenes/pfp-white.png'/></a>";
+                } else {
+                    print "<a class='link' href='signin-page.php'>Log In</a>";
+                }
+            ?>
         </nav>
     </header>
 

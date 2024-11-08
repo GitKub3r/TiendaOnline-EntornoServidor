@@ -8,6 +8,10 @@
     color: var(--soft-white); /* Texto en blanco suave */
 }
 
+.main-header-menu img {
+    width: 20px;
+}
+
 .main-header h1 {
     margin: 0;
     font-size: 2rem;

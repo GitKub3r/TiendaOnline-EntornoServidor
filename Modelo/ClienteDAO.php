@@ -31,7 +31,9 @@ class ClienteDAO
     public function getClienteByNickname($cliente) {
         $stmt = $this->connection->prepare("SELECT * FROM cliente WHERE nickname = :nickname");
 
-        $stmt->bindParam(":nickname", $cliente->getNickname());
+        $nickname = $cliente->getNickname();
+
+        $stmt->bindParam(":nickname", $nickname);
         $stmt->execute();
 
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);

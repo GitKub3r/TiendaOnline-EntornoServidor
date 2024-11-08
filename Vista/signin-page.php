@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
   </a>
 </header>
 
-<form action="" method="post">
+<form action="../Controlador/ControlPeticiones.php" method="post">
   <h1>Log in your account</h1>
 
   <div class="form-group">
@@ -28,11 +32,23 @@
     <input type="password" name="password" id="password">
   </div>
 
-  <span>Don't have an account? <a href="signup-page.html">Sign up</a> now</span>
+  <span>Don't have an account? <a href="signup-page.php">Sign up</a> now</span>
 
   <button type="submit">Sign In</button>
   <button type="reset">Reset</button>
 </form>
+
+<div class="error-box">
+    <p>
+        <?php
+
+            if (isset($_SESSION["login-error"])) {
+                print "Username or password is incorrect!";
+            }
+
+        ?>
+    </p>
+</div>
 
 <footer class="main-footer">
   <h2>Copyright &copy; 2024 Shop-In Company</h2>
