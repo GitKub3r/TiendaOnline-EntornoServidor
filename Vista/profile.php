@@ -1,10 +1,10 @@
 <?php
-    /*session_start();
+    session_start();
 
     if (!$_SESSION["logged"]) {
         header("Location: signin-page.html");
         exit();
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,34 +46,32 @@
                 <div class="form-group-container">
                     <div class="form-group">
                         <label for="profile-name">Name</label>
-                        <input type="text" name="profile-name" id="profile-name" required>
+                        <span id="profile-name">Your Name</span>
                     </div>
 
                     <div class="form-group">
                         <label for="profile-surname">Surname</label>
-                        <input type="text" name="profile-surname" id="profile-surname" required>
+                        <span id="profile-surname">Your Surname</span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="profile-nickname">Nickname</label>
-                    <input type="text" name="profile-nickname" id="profile-nickname" required>
+                    <span id="profile-nickname">Your Nickname</span>
                 </div>
 
                 <div class="form-group-container">
                     <div class="form-group">
                         <label for="profile-telephone">Phone Number</label>
-                        <input type="text" name="profile-telephone" id="profile-telephone" required>
+                        <span id="profile-telephone">Your Phone Number</span>
                     </div>
 
                     <div class="form-group">
                         <label for="profile-direction">Direction</label>
-                        <input type="text" name="profile-direction" id="profile-direction" required>
+                        <span id="profile-direction">Your Direction</span>
                     </div>
                 </div>
             </div>
-
-            <button type="submit" value="confirm">Confirm</button>
         </form>
     </div>
 
