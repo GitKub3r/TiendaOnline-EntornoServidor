@@ -35,7 +35,7 @@
         <?php
 
         if (isset($_SESSION["logged"])) {
-            print "<a href='profile.php'><img width='30px' alt='pfp' src='../Recursos/Imagenes/pfp-white.png'/></a>";
+            print "<a href='profile.php' class='pfp-image'><img alt='pfp' src='../Recursos/Imagenes/pfp-white.png'/></a>";
         } else {
             print "<a class='link' href='signin-page.php'>Log In</a>";
         }
@@ -54,7 +54,7 @@
                 </h2>
             </div>
 
-            <button type="submit" value="logout" name="logout-button">Log Out</button>
+            <button type="submit" value="logout" name="action-button">Log Out</button>
         </form>
 
         <form class="profile-box" action="" method="POST">

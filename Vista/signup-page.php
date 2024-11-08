@@ -23,7 +23,7 @@
   </a>
 </header>
 
-<form action="" method="post">
+<form action="../Controlador/ControlPeticiones.php" method="post">
   <h1>Create your account</h1>
 
   <div class="form-group-container">
@@ -62,7 +62,7 @@
 
   <span>Have an account? <a href="signin-page.php">Sign in</a> here</span>
 
-  <button type="submit">Sign In</button>
+  <button type="submit" value="create-client" name="action-button">Sign Up</button>
   <button type="reset">Reset</button>
 </form>
 

@@ -8,10 +8,6 @@
     color: var(--soft-white); /* Texto en blanco suave */
 }
 
-.main-header-menu img {
-    width: 20px;
-}
-
 .main-header h1 {
     margin: 0;
     font-size: 2rem;
@@ -19,7 +15,6 @@
 }
 
 .main-header nav a {
-    border-radius: 5px;
     color: var(--soft-white); /* Color de texto de enlaces en blanco suave */
     text-decoration: none;
 }
@@ -34,6 +29,7 @@
     color: var(--soft-white);
     text-decoration: none;
 }
+
 
 /* Estilo y animación para los enlaces del header */
 .main-header-menu .link::after {
@@ -50,4 +46,13 @@
 .main-header-menu .link:hover::after {
     width: 100%; /* Ancho completo del subrayado en hover */
     left: 0;
+}
+
+.pfp-image {
+    width: 30px;
+    height: 25px;
+}
+
+.pfp-image img {
+    width: 30px;
 }

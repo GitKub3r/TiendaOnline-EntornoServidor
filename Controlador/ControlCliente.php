@@ -30,4 +30,8 @@ class ControlCliente
     public function getClienteByID($id) {
        return $this->ClienteDAO->getClienteById($id);
     }
+
+    public function addCliente($cliente) {
+        $this->ClienteDAO->addCliente($cliente);
+    }
 }
