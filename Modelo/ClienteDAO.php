@@ -46,7 +46,8 @@ class ClienteDAO
         $stmt->bindParam(":nombre", $cliente->getNombre());
         $stmt->bindParam(":apellido", $cliente->getApellido());
         $stmt->bindParam(":nickname", $cliente->getNickname());
-        $stmt->bindParam(":password", $cliente->getPassword());
+        $sha = sha1($cliente->getPassword());
+        $stmt->bindParam(":password", $sha);
         $stmt->bindParam(":telefono", $cliente->getTelefono());
         $stmt->bindParam(":domicilio", $cliente->getDomicilio());
         $stmt->execute();
