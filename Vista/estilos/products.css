@@ -1,0 +1,28 @@
+.product {
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+    width: 25%;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+ hr {
+     width: 100%;
+     padding: 1px;
+     background-color: black;
+}

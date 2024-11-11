@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="estilos/main-header.css">
     <link rel="stylesheet" href="estilos/main-footer.css">
     <link rel="stylesheet" href="estilos/main-content.css">
+    <link rel="stylesheet" href="estilos/products.css">
+    <link rel="stylesheet" href="estilos/button.css">
 </head>
 <body>
     <header class="main-header">
@@ -45,17 +47,17 @@
             <?php
                 $productos = $controlProducto->getProductos();
 
-                print_r($productos);
-
-                /*foreach ($productos as $producto) {
-                    print "<div class='product'>";
+                foreach ($productos as $producto) {
+                    print "<form action='' method='POST' class='product'>";
                         print "<div class='product-info'>";
                             print "<span class='product-name'>" . $producto->getNombre() . "</span>";
-                            print "<span class='product-price'>$" . $producto->getPrecio() . " €</span>";
+                            print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
                         print "</div>";
-                        print "<hr>";
-                    print "</div>";
-                }*/
+                        print "<hr/>";
+
+                        print "<button>Añadir al carrito</button>";
+                    print "</form>";
+                }
             ?>
         </div>
     </div>

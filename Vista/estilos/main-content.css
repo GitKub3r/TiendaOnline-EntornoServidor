@@ -10,4 +10,9 @@
     padding: 20px; /* Espacio interno para que el contenido no toque los bordes */
 
     box-sizing: border-box; /* Incluye padding en el ancho total */
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
 }

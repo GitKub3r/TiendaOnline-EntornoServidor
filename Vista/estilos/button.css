@@ -1,0 +1,27 @@
+form button {
+    padding: 10px 20px;
+    margin: 15px 0; /* Espaciado vertical entre los botones */
+    width: 98%; /* Establecer ancho del botón al 100% del contenedor */
+    border: none;
+    border-radius: 5px;
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--pastel-red-contrast);
+}
+
+form button[type="reset"] {
+    background-color: var(--soft-white);
+    color: var(--pastel-red);
+    border: 1px solid var(--pastel-red);
+}
+
+form button[type="reset"]:hover {
+    background-color: var(--pastel-red);
+    color: var(--soft-white);
+}

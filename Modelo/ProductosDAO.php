@@ -26,11 +26,11 @@ class ProductosDAO
     public function getProductos() {
         $stmt = $this->conn->prepare("SELECT * FROM producto");
         $stmt->execute();
-        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+        $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $productos = [];
 
-        while ($fila) {
+        foreach ($filas as $fila) {
             $producto = new ProductosDTO($fila['nombre'], $fila['descripcion'], $fila['precio']);
             $productos[] = $producto;
         }
