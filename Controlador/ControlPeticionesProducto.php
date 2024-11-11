@@ -13,7 +13,7 @@ switch ($button) {
         $precio = isset($_POST["precio"]) ? $_POST["precio"] : "";
         $descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : "";
 
-        $newProduct = new ProductosDTO($nombre, $precio, $descripcion);
+        $newProduct = new ProductosDTO($nombre, $descripcion, $precio);
         $controlProducto->addProducto($newProduct);
         header("Location: ../Vista/index.php");
         break;
@@ -24,7 +24,7 @@ switch ($button) {
         $descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : "";
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
 
-        $newProduct = new ProductosDTO($nombre, $precio, $descripcion);
+        $newProduct = new ProductosDTO($nombre, $descripcion, $precio);
         $newProduct->setId($id);
         $controlProducto->updateProducto($newProduct);
         header("Location: ../Vista/index.php");
