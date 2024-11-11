@@ -29,7 +29,7 @@
     </a>
 
     <nav class="main-header-menu">
-        <a href="" class="link">Acciones</a>
+        <a href="action-menu.php" class="link">Acciones</a>
         <a href="" class="link">Carrito</a>
 
         <?php

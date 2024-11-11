@@ -21,7 +21,19 @@
     font-weight: bold;
 }
 
- hr {
+.product-label {
+    color: var(--pastel-red);
+}
+
+.local {
+    color: var(--dark-gray);
+}
+
+.sale {
+    color: var(--pastel-orange);
+}
+
+.product hr {
      width: 100%;
      padding: 1px;
      background-color: black;

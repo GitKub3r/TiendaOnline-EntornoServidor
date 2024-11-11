@@ -22,7 +22,7 @@
         </a>
 
         <nav class="main-header-menu">
-            <a href="" class="link">Acciones</a>
+            <a href="action-menu.php" class="link">Acciones</a>
             <a href="" class="link">Carrito</a>
 
             <?php
@@ -48,14 +48,22 @@
                 $productos = $controlProducto->getProductos();
 
                 foreach ($productos as $producto) {
-                    print "<form action='' method='POST' class='product'>";
+                    print "<form action='../Controlador/ControlPeticionesProducto.php' method='POST' class='product'>";
                         print "<div class='product-info'>";
                             print "<span class='product-name'>" . $producto->getNombre() . "</span>";
                             print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
                         print "</div>";
                         print "<hr/>";
 
-                        print "<button>Añadir al carrito</button>";
+                        print "<button type='submit' value='carrito' name='action-button'>Añadir al carrito</button>";
+
+                    if ($producto->getPrecio() < 10) {
+                        print "<span class='product-label sale'>Producto de Oferta</span>";
+                    } elseif ($producto->getPrecio() > 200) {
+                        print "<span class='product-label'>Producto de Calidad</span>";
+                    } else {
+                        print "<span class='product-label local'>Producto Local</span>";
+                    }
                     print "</form>";
                 }
             ?>
