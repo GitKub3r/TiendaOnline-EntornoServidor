@@ -16,7 +16,7 @@ class ProductosDAO
 
         
         if ($fila) {
-            $productos = new ProductosDTO($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cliente_id']);
+            $productos = new ProductosDTO($fila['nombre'], $fila['descripcion'], $fila['precio']);
             return $productos;
         } else {
             return null;
