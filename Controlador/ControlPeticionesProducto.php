@@ -32,5 +32,7 @@ switch ($button) {
         $nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
         $controlProducto->deleteProductoByName($nombre);
         break;
+    case "carrito":
+        break;
 }
 ?>
