@@ -14,7 +14,7 @@
 </head>
 <body>
 <header class="main-header">
-  <a href="landing-page.php">
+  <a href="index.php">
     <h1>Shop-In</h1>
   </a>
 </header>
@@ -29,6 +29,13 @@
 
   <div class="form-group">
     <label for="password">Password</label>
+      <?php
+
+      if (isset($_SESSION["login-error"])) {
+          print "<span class='error'>Password is incorrect!</span>";
+      }
+
+      ?>
     <input type="password" name="password" id="password">
   </div>
 
@@ -37,18 +44,6 @@
   <button type="submit">Sign In</button>
   <button type="reset">Reset</button>
 </form>
-
-<div class="error-box">
-    <p>
-        <?php
-
-            if (isset($_SESSION["login-error"])) {
-                print "Username or password is incorrect!";
-            }
-
-        ?>
-    </p>
-</div>
 
 <footer class="main-footer">
   <h2>Copyright &copy; 2024 Shop-In Company</h2>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="main-header">
-        <a href="landing-page.php">
+        <a href="index.php">
             <h1>Shop-In</h1>
         </a>
 

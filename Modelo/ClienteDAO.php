@@ -43,14 +43,19 @@ class ClienteDAO
     public function addCliente($cliente) {
         $stmt = $this->connection->prepare("INSERT INTO cliente (nombre, apellido, nickname, password, telefono, domicilio) VALUES (:nombre, :apellido, :nickname, :password, :telefono, :domicilio)");
 
+        $name = $cliente->getNombre();
+        $apellido = $cliente->getApellido();
+        $nickname = $cliente->getNickname();
+        $telefono = $cliente->getTelefono();
+        $domicilio = $cliente->getDomicilio();
 
-        $stmt->bindParam(":nombre", $cliente->getNombre());
-        $stmt->bindParam(":apellido", $cliente->getApellido());
-        $stmt->bindParam(":nickname", $cliente->getNickname());
+        $stmt->bindParam(":nombre", $name);
+        $stmt->bindParam(":apellido", $apellido);
+        $stmt->bindParam(":nickname", $nickname);
         $sha = sha1($cliente->getPassword());
         $stmt->bindParam(":password", $sha);
-        $stmt->bindParam(":telefono", $cliente->getTelefono());
-        $stmt->bindParam(":domicilio", $cliente->getDomicilio());
+        $stmt->bindParam(":telefono", $telefono);
+        $stmt->bindParam(":domicilio", $domicilio);
         $stmt->execute();
     }
 

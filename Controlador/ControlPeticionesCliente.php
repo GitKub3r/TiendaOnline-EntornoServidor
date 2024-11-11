@@ -13,7 +13,7 @@ $clientControl = new ControlCliente();
 
 if ($button == "logout") {
     session_destroy();
-    header("Location: ../Vista/landing-page.php");
+    header("Location: ../Vista/index.php");
     exit();
 } elseif ($button == "create-client") {
     $nameField = isset($_POST["new-name"]) ? $_POST["new-name"] : "";
@@ -47,6 +47,6 @@ if ($result == null) {
     exit();
 } elseif ($result->getPassword() != null) {
     $_SESSION["logged"] = $result->getId();
-    header("Location: ../Vista/landing-page.php");
+    header("Location: ../Vista/index.php");
     exit();
 }

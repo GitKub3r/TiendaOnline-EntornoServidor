@@ -105,3 +105,11 @@ form span a {
 form span a:hover {
     text-decoration: underline;
 }
+
+form span.error {
+    color: var(--pastel-red-contrast);
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 0 .5rem;
+}
