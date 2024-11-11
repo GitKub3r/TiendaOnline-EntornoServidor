@@ -69,10 +69,16 @@ class ProductosDAO
 
     public function updateProducto($producto) {
         $stmt = $this->conn->prepare("UPDATE producto SET nombre = :nombre, descripcion = :descripcion, precio = :precio WHERE id = :id");
-        $stmt->bindParam(':nombre', $producto->getNombre());
-        $stmt->bindParam(':descripcion', $producto->getDescripcion());
-        $stmt->bindParam(':precio', $producto->getPrecio());
-        $stmt->bindParam(':id', $producto->getId());
+
+        $name = $producto->getNombre();
+        $description = $producto->getDescripcion();
+        $price = $producto->getPrecio();
+        $id = $producto->getId();
+
+        $stmt->bindParam(':nombre', $name);
+        $stmt->bindParam(':descripcion', $description);
+        $stmt->bindParam(':precio', $price);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
 

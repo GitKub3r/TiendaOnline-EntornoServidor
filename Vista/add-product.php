@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="estilos/main-content.css">
     <link rel="stylesheet" href="estilos/form.css">
     <link rel="stylesheet" href="estilos/button.css">
+    <link rel="stylesheet" href="estilos/action-forms.css">
 </head>
 <body>
 <header class="main-header">
@@ -38,7 +39,7 @@
             <label for="product-name">Name</label>
 
             <?php
-                if ($_SESSION["product-error"]) {
+                if (isset($_SESSION["product-error"]) && $_SESSION["product-error"]) {
                     print "<span class='error'>Ya existe un producto con ese nombre!</span>";
                 }
             ?>

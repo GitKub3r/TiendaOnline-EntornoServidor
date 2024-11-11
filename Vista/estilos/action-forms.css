@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-group {
+    position: relative;
+}
+
+form span.error {
+    position: absolute;
+    left: 15%;
+}

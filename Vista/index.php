@@ -22,8 +22,8 @@
         </a>
 
         <nav class="main-header-menu">
-            <a href="action-menu.php" class="link">Acciones</a>
-            <a href="" class="link">Carrito</a>
+            <a href="action-menu.php" class="link">Actions</a>
+            <a href="" class="link">Cart</a>
 
             <?php
                 session_start();
@@ -50,22 +50,31 @@
                 foreach ($productos as $producto) {
                     print "<form action='../Controlador/ControlPeticionesProducto.php' method='POST' class='product'>";
                         print "<div class='product-info'>";
-                            print "<span class='product-name'>" . $producto->getNombre() . "<span class='product-id'>#" . $producto->getId() . "</span></span>";
+                            print "<span class='product-name'>" . $producto->getNombre() . " <span class='product-id'>#" . $producto->getId() . "</span></span>";
                             print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
                         print "</div>";
-                        print "<hr/>";
 
+                        if ($producto->getPrecio() < 10) {
+                            print "<div class='product-label sale'>";
+                                print "<span>Producto de Oferta</span>";
+                                print "<img src='../Recursos/Imagenes/offer-label.png' alt='offer-label-icon'>";
+                            print "</div>";
+                        } elseif ($producto->getPrecio() > 200) {
+                            print "<div class='product-label quality'>";
+                                print "<span>Producto de Calidad</span>";
+                                print "<img src='../Recursos/Imagenes/quality-label.png' alt='quaility-label-icon'>";
+                            print "</div>";
+                        } else {
+                            print "<div class='product-label original'>";
+                            print "<span>Producto Original</span>";
+                            print "<img src='../Recursos/Imagenes/check-label.png' alt='original-label-icon'>";
+                            print "</div>";
+                        }
+
+                        print "<hr/>";
                         print "<span class='product-desc'>". $producto->getDescripcion() . "</span>";
 
-                        print "<button type='submit' value='carrito' name='action-button'>Añadir al carrito</button>";
-
-                    if ($producto->getPrecio() < 10) {
-                        print "<span class='product-label sale'>Producto de Oferta</span>";
-                    } elseif ($producto->getPrecio() > 200) {
-                        print "<span class='product-label'>Producto de Calidad</span>";
-                    } else {
-                        print "<span class='product-label local'>Producto Local</span>";
-                    }
+                        print "<button type='submit' value='carrito' name='action-button'><img src='../Recursos/Imagenes/shopping-cart.png' alt='shopping-cart-icon'></button>";
                     print "</form>";
                 }
             ?>

@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="estilos/main-header.css">
     <link rel="stylesheet" href="estilos/main-footer.css">
     <link rel="stylesheet" href="estilos/main-content.css">
+    <link rel="stylesheet" href="estilos/form.css">
+    <link rel="stylesheet" href="estilos/button.css">
     <link rel="stylesheet" href="estilos/products.css">
     <link rel="stylesheet" href="estilos/button.css">
+    <link rel="stylesheet" href="estilos/action-forms.css">
 </head>
 <body>
 <header class="main-header">
@@ -33,7 +36,37 @@
 </header>
 
 <div class="main-content">
+    <form method="post" action="../Controlador/ControlPeticionesProducto.php">
+        <div class="form-group-container">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" name="id" id="id" required>
 
+                <?php
+                    if (isset($_SESSION["product-error"]) && $_SESSION["product-error"]) {
+                        print "<span class='error'>Product doesn't exist!</span>";
+                    }
+                ?>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Name</label>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Description</label>
+            <input type="text" name="descripcion" id="descripcion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" min="0" required>
+        </div>
+
+        <button type="submit" value="modificar" name="action-button">Modify Product</button>
+    </form>
 </div>
 
 <footer class="main-footer">

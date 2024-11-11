@@ -6,9 +6,28 @@
     margin: auto;
 }
 
+form hr {
+    width: 100%;
+    padding: 1px;
+    background-color: var(--pastel-red);
+    margin: 10px 0;
+}
+
 .action-box {
     width: 25%;
     padding: .5rem;
     border-radius: 5px;
     box-shadow: 2px 2px 5px black;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 10px;
 }

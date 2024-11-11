@@ -37,13 +37,31 @@ switch ($button) {
 
         $newProduct = new ProductosDTO($nombre, $descripcion, $precio);
         $newProduct->setId($id);
-        $controlProducto->updateProducto($newProduct);
-        header("Location: ../Vista/index.php");
+
+        $existe = $controlProducto->getProducto($id);
+
+        if ($existe == null) {
+            $_SESSION["product-error"] = true;
+            header("Location: ../Vista/update-product.php");
+        } else {
+            $_SESSION["product-error"] = false;
+            $controlProducto->updateProducto($newProduct);
+            header("Location: ../Vista/index.php");
+        }
         break;
 
     case "eliminar":
-        $nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
-        $controlProducto->deleteProductoByName($nombre);
+        $id = isset($_POST["id"]) ? $_POST["id"] : "";
+        $existe = $controlProducto->getProducto($id);
+
+        if ($existe == null) {
+            $_SESSION["product-error"] = true;
+            header("Location: ../Vista/delete-product.php");
+        } else {
+            $_SESSION["product-error"] = false;
+            $controlProducto->deleteProducto($id);
+            header("Location: ../Vista/index.php");
+        }
         break;
     case "carrito":
         break;

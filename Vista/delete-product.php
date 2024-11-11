@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="estilos/main-header.css">
     <link rel="stylesheet" href="estilos/main-footer.css">
     <link rel="stylesheet" href="estilos/main-content.css">
+    <link rel="stylesheet" href="estilos/form.css">
     <link rel="stylesheet" href="estilos/products.css">
     <link rel="stylesheet" href="estilos/button.css">
+    <link rel="stylesheet" href="estilos/action-forms.css">
 </head>
 <body>
 <header class="main-header">
@@ -33,7 +35,21 @@
 </header>
 
 <div class="main-content">
+    <form method="post" action="../Controlador/ControlPeticionesProducto.php">
+        <div class="form-group">
+            <label for="id">ID</label>
 
+            <?php
+                if (isset($_SESSION["product-error"]) && $_SESSION["product-error"]) {
+                    print "<span class='error'>That product doesn't exist</span>";
+                }
+            ?>
+
+            <input type="text" name="id" id="id" required>
+        </div>
+
+        <button type="submit" value="eliminar" name="action-button">Delete Product</button>
+    </form>
 </div>
 
 <footer class="main-footer">

@@ -1,7 +1,7 @@
 form button {
     padding: 10px 20px;
     margin: 15px 0; /* Espaciado vertical entre los botones */
-    width: 98%; /* Establecer ancho del botón al 100% del contenedor */
+    width: 100%; /* Establecer ancho del botón al 100% del contenedor */
     border: none;
     border-radius: 5px;
     background-color: var(--pastel-red);

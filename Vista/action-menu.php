@@ -1,3 +1,20 @@
+<?php
+    require "../Controlador/ControlCliente.php";
+    $clientController = new ControlCliente();
+    session_start();
+
+    if (!$_SESSION["logged"]) {
+        header("Location: signin-page.php");
+        exit();
+    } else {
+        $client = $clientController->getClienteByID($_SESSION["logged"]);
+    }
+
+    if (isset($_SESSION["product-error"])) {
+        $_SESSION["product-error"] = false;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +35,10 @@
   </a>
 
   <nav class="main-header-menu">
-    <a href="" class="link">Acciones</a>
-    <a href="" class="link">Carrito</a>
+    <a href="" class="link">Actions</a>
+    <a href="" class="link">Cart</a>
 
     <?php
-        session_start();
 
         if (isset($_SESSION["logged"])) {
             print "<a href='profile.php' class='pfp-image'><img alt='pfp' src='../Recursos/Imagenes/pfp-white.png'/></a>";
@@ -35,15 +51,27 @@
 
 <div class="main-content">
   <form action="add-product.php" method="POST" class="action-box">
-    <h2>Add Product</h2>
+    <div class="action">
+        <h2>Add Product</h2>
+        <img src="../Recursos/Imagenes/add-product.png" alt="add-product-icon">
+    </div>
+    <hr>
     <button type="submit" value="agregar" name="action-button">Add</button>
   </form>
   <form action="update-product.php" method="POST" class="action-box">
-    <h2>Modify Product</h2>
-    <button type="submit" value="modificar" name="action-button">Modify</button>
+    <div class="action">
+        <h2>Edit Product</h2>
+        <img src="../Recursos/Imagenes/edit-product.png" alt="edit-product-icon">
+    </div>
+    <hr>
+    <button type="submit" value="modificar" name="action-button">Edit</button>
   </form>
   <form action="delete-product.php" method="POST" class="action-box">
-    <h2>Delete Product</h2>
+    <div class="action">
+        <h2>Delete Product</h2>
+        <img src="../Recursos/Imagenes/delete-product.png" alt="delete-product-icon">
+    </div>
+    <hr>
     <button type="submit" value="eliminar" name="action-button">Delete</button>
   </form>
 </div>

@@ -31,8 +31,8 @@
     <label for="password">Password</label>
       <?php
 
-      if ($_SESSION["login-error"]) {
-          print "<span class='error'>Password is incorrect!</span>";
+      if (isset($_SESSION["login-error"]) && $_SESSION["login-error"]) {
+              print "<span class='error'>Password is incorrect!</span>";
       }
 
       ?>
