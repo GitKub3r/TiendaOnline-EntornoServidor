@@ -11,6 +11,10 @@ class ControlProducto{
         return $this->ProductosDAO->getProductosByID($id);
     }
 
+    public function getProductosByNombre($nombre) {
+        return this->ProductosDAO->getProductosByName($nombre);
+    }
+
     public function getProductos() {
         return $this->ProductosDAO->getProductos();
     }

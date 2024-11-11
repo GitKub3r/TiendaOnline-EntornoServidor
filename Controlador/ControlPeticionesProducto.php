@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once "ControlProducto.php";
 require_once '../Modelo/ProductosDTO.php';
 
@@ -14,8 +16,17 @@ switch ($button) {
         $descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : "";
 
         $newProduct = new ProductosDTO($nombre, $descripcion, $precio);
-        $controlProducto->addProducto($newProduct);
-        header("Location: ../Vista/index.php");
+
+        $existe = $controlProducto->getProductosByNombre($nombre);
+
+        if ($existe != null) {
+            $_SESSION["product-error"] = true;
+            header("Location: ../Vista/add-product.php");
+        } else {
+            $_SESSION["product-error"] = false;
+            $controlProducto->addProducto($newProduct);
+            header("Location: ../Vista/index.php");
+        }
         break;
 
     case "modificar":

@@ -23,6 +23,21 @@ class ProductosDAO
         }
     }
 
+    public function getGroductosByNombre($nombre) {
+        $stmt = $this->conn->prepare("SELECT * FROM producto WHERE nombre = :nombre");
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->execute();
+        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        if ($fila) {
+            $productos = new ProductosDTO($fila['nombre'], $fila['descripcion'], $fila['precio']);
+            return $productos;
+        } else {
+            return null;
+        }
+    }
+
     public function getProductos() {
         $stmt = $this->conn->prepare("SELECT * FROM producto");
         $stmt->execute();
