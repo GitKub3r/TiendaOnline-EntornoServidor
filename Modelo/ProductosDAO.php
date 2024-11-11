@@ -32,6 +32,7 @@ class ProductosDAO
 
         foreach ($filas as $fila) {
             $producto = new ProductosDTO($fila['nombre'], $fila['descripcion'], $fila['precio']);
+            $producto->setId($fila['id']);
             $productos[] = $producto;
         }
 
