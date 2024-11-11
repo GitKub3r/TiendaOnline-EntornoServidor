@@ -38,7 +38,7 @@
             <label for="product-name">Name</label>
 
             <?php
-                if (isset($_SESSION["product-error"])) {
+                if ($_SESSION["product-error"]) {
                     print "<span class='error'>Ya existe un producto con ese nombre!</span>";
                 }
             ?>
