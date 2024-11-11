@@ -22,8 +22,10 @@ switch ($button) {
         $nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
         $precio = isset($_POST["precio"]) ? $_POST["precio"] : "";
         $descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : "";
+        $id = isset($_POST["id"]) ? $_POST["id"] : "";
 
         $newProduct = new ProductosDTO($nombre, $precio, $descripcion);
+        $newProduct->setId($id);
         $controlProducto->updateProducto($newProduct);
         header("Location: ../Vista/index.php");
         break;
