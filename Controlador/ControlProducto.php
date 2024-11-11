@@ -8,11 +8,11 @@ class ControlProducto{
 
     public function getProducto($id)
     {
-        return $this->ProductosDAO->getProuctosByID($id);
+        return $this->ProductosDAO->getProductosByID($id);
     }
 
     public function getProductos() {
-        return $this->ProductosDAO->getProuctos();
+        return $this->ProductosDAO->getProductos();
     }
 
     public function addProducto($product) {

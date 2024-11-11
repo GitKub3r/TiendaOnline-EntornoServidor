@@ -8,7 +8,7 @@ class ProductosDAO
         $this->conn = Database::getConnection();
     }
 
-    public function getProuctosByID($id) {
+    public function getProductosByID($id) {
         $stmt = $this->conn->prepare("SELECT * FROM producto WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -23,7 +23,7 @@ class ProductosDAO
         }
     }
 
-    public function getProuctos() {
+    public function getProductos() {
         $stmt = $this->conn->prepare("SELECT * FROM producto");
         $stmt->execute();
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);

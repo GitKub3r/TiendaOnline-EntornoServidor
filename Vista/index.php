@@ -45,7 +45,9 @@
             <?php
                 $productos = $controlProducto->getProductos();
 
-                foreach ($productos as $producto) {
+                print_r($productos);
+
+                /*foreach ($productos as $producto) {
                     print "<div class='product'>";
                         print "<div class='product-info'>";
                             print "<span class='product-name'>" . $producto->getNombre() . "</span>";
@@ -53,7 +55,7 @@
                         print "</div>";
                         print "<hr>";
                     print "</div>";
-                }
+                }*/
             ?>
         </div>
     </div>
