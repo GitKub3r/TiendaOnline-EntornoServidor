@@ -19,7 +19,7 @@ switch ($button) {
 
         $existe = $controlProducto->getProductosByNombre($nombre);
 
-        if ($existe != null) {
+        if ($existe->getNombre() == $nombre) {
             $_SESSION["product-error"] = true;
             header("Location: ../Vista/add-product.php");
         } else {
