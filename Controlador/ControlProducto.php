@@ -12,15 +12,24 @@ class ControlProducto{
         return $this->ProductosDAO->getProuctosByID($id);
     }
 
-    public function getProducts() {
+    public function getProductos() {
         return $this->ProductosDAO->getProuctos();
     }
 
-    public function addProduct($product) {
-        this->ProductosDTO->addProduct($product);
+    public function addProducto($product) {
+        this->ProductosDTO->addProducto($product);
     }
 
-    public function deleteProduct($id) {
-        this->ProductosDTO->deleteProduct($id);
+    public function updateProducto($product)
+    {
+        this->ProductosDTO->updateProducto($product);
+    }
+
+    public function deleteProducto($id) {
+        this->ProductosDTO->deleteProducto($id);
+    }
+
+    public function deleteProductoByName($nombre) {
+        this->ProductosDTO->deleteProductoByName($nombre);
     }
 }

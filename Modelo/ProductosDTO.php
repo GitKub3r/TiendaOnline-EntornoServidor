@@ -7,13 +7,11 @@ Class ProductosDTO{
     private $descripcion;
     private $cliente_id;
 
-    public function __construct($id, $precio, $nombre, $descripcion, $cliente_id)
+    public function __construct($precio, $nombre, $descripcion)
     {
-        $this->id = $id;
         $this->precio = $precio;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
-        $this->cliente_id = $cliente_id;
     }
 
     public function getId()
