@@ -21,6 +21,10 @@
     font-weight: bold;
 }
 
+.product-id {
+    color: var(--light-gray);
+}
+
 .product-label {
     color: var(--pastel-red);
 }

@@ -2,7 +2,7 @@
     session_start();
 
     if (isset($_SESSION["login-error"])) {
-        session_destroy();
+        $_SESSION["login-error"] = false;
     }
 ?>
 

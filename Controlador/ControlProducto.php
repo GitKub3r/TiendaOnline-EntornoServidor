@@ -12,7 +12,7 @@ class ControlProducto{
     }
 
     public function getProductosByNombre($nombre) {
-        return this->ProductosDAO->getProductosByName($nombre);
+        return $this->ProductosDAO->getProductosByName($nombre);
     }
 
     public function getProductos() {
@@ -20,19 +20,19 @@ class ControlProducto{
     }
 
     public function addProducto($product) {
-        this->ProductosDTO->addProducto($product);
+        $this->ProductosDAO->addProducto($product);
     }
 
     public function updateProducto($product)
     {
-        this->ProductosDTO->updateProducto($product);
+        $this->ProductosDAO->updateProducto($product);
     }
 
     public function deleteProducto($id) {
-        this->ProductosDTO->deleteProducto($id);
+        $this->ProductosDAO->deleteProducto($id);
     }
 
     public function deleteProductoByName($nombre) {
-        this->ProductosDTO->deleteProductoByName($nombre);
+        $this->ProductosDAO->deleteProductoByName($nombre);
     }
 }

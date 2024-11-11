@@ -23,7 +23,7 @@ class ProductosDAO
         }
     }
 
-    public function getGroductosByNombre($nombre) {
+    public function getProductosByName($nombre) {
         $stmt = $this->conn->prepare("SELECT * FROM producto WHERE nombre = :nombre");
         $stmt->bindParam(':nombre', $nombre);
         $stmt->execute();
@@ -56,9 +56,14 @@ class ProductosDAO
 
     public function addProducto($producto) {
         $stmt = $this->conn->prepare("INSERT INTO producto (nombre, descripcion, precio) VALUES (:nombre, :descripcion, :precio)");
-        $stmt->bindParam(':nombre', $producto->getNombre());
-        $stmt->bindParam(':descripcion', $producto->getDescripcion());
-        $stmt->bindParam(':precio', $producto->getPrecio());
+
+        $name = $producto->getNombre();
+        $description = $producto->getDescripcion();
+        $price = $producto->getPrecio();
+
+        $stmt->bindParam(':nombre', $name);
+        $stmt->bindParam(':descripcion', $description);
+        $stmt->bindParam(':precio', $price);
         $stmt->execute();
     }
 
