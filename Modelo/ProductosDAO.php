@@ -31,7 +31,7 @@ class ProductosDAO
         $productos = [];
 
         while ($fila) {
-            $producto = new ProductosDTO($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio'], $fila['cliente_id']);
+            $producto = new ProductosDTO($fila['nombre'], $fila['descripcion'], $fila['precio']);
             $productos[] = $producto;
         }
 
