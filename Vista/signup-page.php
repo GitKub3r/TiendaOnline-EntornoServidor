@@ -57,7 +57,7 @@
 
   <div class="form-group">
     <label for="new-password">Password</label>
-    <input type="password" name="new-password" id="new-password" pattern="[A-Za-z0-9!?-]{8,}" required>
+    <input type="password" name="new-password" id="new-password" pattern="[A-Za-z0-9!?-]{8,}" minlength="4" required>
   </div>
 
   <span>Have an account? <a href="signin-page.php">Sign in</a> here</span>

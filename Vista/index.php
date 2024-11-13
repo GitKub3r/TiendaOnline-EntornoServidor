@@ -50,7 +50,8 @@
                 foreach ($productos as $producto) {
                     print "<form action='../Controlador/ControlPeticionesProducto.php' method='POST' class='product'>";
                         print "<div class='product-info'>";
-                            print "<span class='product-name'>" . $producto->getNombre() . " <span class='product-id'>#" . $producto->getId() . "</span></span>";
+                        $id = $producto->getId();
+                            print "<span class='product-name'>" . $producto->getNombre() . " <input type='text' class='product-id' name='id-producto' value='#$id' readonly> </span>";
                             print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
                         print "</div>";
 
