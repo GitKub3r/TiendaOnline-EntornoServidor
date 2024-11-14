@@ -13,13 +13,13 @@ class ControlCarrito
     }
 
     public function eliminarUnoCarrito($id) {
-        if (isset($_SESSION['lista_tareas'][$id])) {
-            unset($_SESSION['lista_tareas'][$id]);
+        if (isset($_SESSION['listaCarrito'][$id])) {
+            unset($_SESSION['listaCarrito'][$id]);
         }
     }
 
     public function eliminarTodosCarrito()
     {
-        $_SESSION['lista_tareas'] = [];
+        $_SESSION['listaCarrito'] = [];
     }
 }

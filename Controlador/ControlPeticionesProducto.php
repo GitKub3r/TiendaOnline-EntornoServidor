@@ -71,16 +71,19 @@ switch ($button) {
         }
         break;
     case "carrito":
-        $id = isset($_POST["id-producto"]) ? $_POST["id"] : "";
+        $id = isset($_POST["id-producto"]) ? $_POST["id-producto"] : "";
+        $id = str_replace("#", "", $id);
         $controlCarrito->agregarCarrito($id);
-        echo $_SESSION['listaCarrito'][0];
+        header("Location: ../Vista/carrito.php");
         break;
     case "eliminarid":
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
         $controlCarrito->eliminarUnoCarrito($id);
+        header("Location: ../Vista/carrito.php");
         break;
     case "eliminartodos":
-        $controlCarrito->eliminarTodosCarrito();
+        $_SESSION['lista_tareas'] = [];
+        header("Location: ../Vista/carrito.php");
         break;
 }
 ?>

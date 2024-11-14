@@ -38,7 +38,9 @@ $controlProducto = new ControlProducto();
 </header>
 
 <div class="main-content">
-    
+    <form method="POST" action="../Controlador/ControlPeticionesProducto.php">
+        <button type="submit" name="action-button" value="eliminartodos">ELIMINAR</button>
+    </form>
 </div>
 
 <footer class="main-footer">
