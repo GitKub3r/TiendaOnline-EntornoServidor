@@ -73,6 +73,7 @@ switch ($button) {
     case "carrito":
         $id = isset($_POST["id-producto"]) ? $_POST["id"] : "";
         $controlCarrito->agregarCarrito($id);
+        echo $_SESSION['listaCarrito'][0];
         break;
     case "eliminarid":
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
