@@ -77,9 +77,11 @@ switch ($button) {
         header("Location: ../Vista/index.php");
         break;
     case "eliminarid":
-        $id = isset($_POST["id"]) ? $_POST["id"] : "";
+        $id = isset($_POST["id-carrito"]) ? $_POST["id-carrito"] : "";
+        print $id;
         $controlCarrito->eliminarUnoCarrito($id);
-        header("Location: ../Vista/carrito.php");
+        print $id;
+        //header("Location: ../Vista/carrito.php");
         break;
     case "eliminartodos":
         $controlCarrito->eliminarTodosCarrito();

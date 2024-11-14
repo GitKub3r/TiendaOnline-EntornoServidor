@@ -14,6 +14,7 @@ $controlProducto = new ControlProducto();
     <link rel="stylesheet" href="estilos/main-content.css">
     <link rel="stylesheet" href="estilos/products.css">
     <link rel="stylesheet" href="estilos/button.css">
+    <link rel="stylesheet" href="estilos/carrito.css">
 </head>
 <body>
 <header class="main-header">
@@ -39,7 +40,36 @@ $controlProducto = new ControlProducto();
 
 <div class="main-content">
     <form method="POST" action="../Controlador/ControlPeticionesProducto.php">
-        <button type="submit" name="action-button" value="eliminartodos">ELIMINAR</button>
+        <?php
+            if (isset($_SESSION["listaCarrito"]) && count($_SESSION["listaCarrito"]) > 0) {
+                $carrito = $_SESSION["listaCarrito"];
+
+                for ($i = 0; $i < count($carrito); $i++) {
+                    if (isset($carrito[$i])) {
+                        $producto = $controlProducto->getProducto($carrito[$i]);
+
+                        print "<form method='POST' action='../Controlador/ControlPeticionesProducto.php' class='carrito-container'>";
+                        print "<div class='product-info'>";
+                        $id = $carrito[$i];
+                        print "<div class='product-data'>";
+                        print "<span class='product-name'>" . $producto->getNombre() . "</span>";
+                        print "<input type='text' class='product-id' name='id-producto' value='#$id' readonly>";
+                        print "</div>";
+                        print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
+                        print "</div>";
+                        print "<hr/>";
+                        print "<span class='product-desc'>". $producto->getDescripcion() . "</span>";
+
+                        print "<input  name='id-carrito' value='$i'>";
+
+                        print "<button type='submit' value='eliminarid' name='action-button'><img src='../Recursos/Imagenes/shopping-cart.png' alt='shopping-cart-icon'></button>";
+                        print "</form>";
+                    }
+
+                }
+            }
+        ?>
+        <button type="submit" name="action-button" value="eliminartodos">ELIMINAR TODOS</button>
     </form>
 </div>
 
