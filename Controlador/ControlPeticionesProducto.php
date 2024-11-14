@@ -82,7 +82,7 @@ switch ($button) {
         header("Location: ../Vista/carrito.php");
         break;
     case "eliminartodos":
-        $_SESSION['lista_tareas'] = [];
+        $controlCarrito->eliminarTodosCarrito();
         header("Location: ../Vista/carrito.php");
         break;
 }
