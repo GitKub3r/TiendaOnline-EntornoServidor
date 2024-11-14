@@ -23,7 +23,7 @@
 
         <nav class="main-header-menu">
             <a href="action-menu.php" class="link">Actions</a>
-            <a href="" class="link">Cart</a>
+            <a href="carrito.php" class="link">Cart</a>
 
             <?php
                 session_start();

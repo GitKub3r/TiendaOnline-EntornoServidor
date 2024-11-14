@@ -30,7 +30,7 @@
 
     <nav class="main-header-menu">
         <a href="action-menu.php" class="link">Acciones</a>
-        <a href="" class="link">Carrito</a>
+        <a href="carrito.php" class="link">Carrito</a>
 
         <?php
 

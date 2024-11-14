@@ -35,8 +35,8 @@
   </a>
 
   <nav class="main-header-menu">
-    <a href="" class="link">Actions</a>
-    <a href="" class="link">Cart</a>
+    <a href="action-menu.php" class="link">Actions</a>
+    <a href="carrito.php" class="link">Cart</a>
 
     <?php
 
