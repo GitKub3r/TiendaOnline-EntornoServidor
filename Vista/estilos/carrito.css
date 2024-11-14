@@ -2,3 +2,26 @@ button img {
     width: 25px;
     height: 25px;
 }
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    margin: 5% 0;
+}
+
+.shopping-cart-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+}
+
+.delete-all {
+    width: 100%;
+}

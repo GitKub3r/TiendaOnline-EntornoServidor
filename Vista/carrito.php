@@ -1,6 +1,15 @@
 <?php
 require "../Controlador/ControlProducto.php";
 $controlProducto = new ControlProducto();
+
+function isEmpty($array)
+{
+    $noNull = array_filter($array, function($value) {
+        return $value !== null;
+    });
+
+    return empty($noNull);
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,38 +48,56 @@ $controlProducto = new ControlProducto();
 </header>
 
 <div class="main-content">
-    <form method="POST" action="../Controlador/ControlPeticionesProducto.php">
+    <div class="shopping-cart-content">
         <?php
-            if (isset($_SESSION["listaCarrito"]) && count($_SESSION["listaCarrito"]) > 0) {
-                $carrito = $_SESSION["listaCarrito"];
+        if (isset($_SESSION["listaCarrito"]) && count($_SESSION["listaCarrito"]) > 0) {
+            $carrito = $_SESSION["listaCarrito"];
 
-                for ($i = 0; $i < count($carrito); $i++) {
-                    if ($carrito[$i] != null) {
-                        $producto = $controlProducto->getProducto($carrito[$i]);
+            for ($i = 0; $i < count($carrito); $i++) {
+                if ($carrito[$i] != null) {
+                    $producto = $controlProducto->getProducto($carrito[$i]);
 
-                        print "<form method='POST' action='../Controlador/ControlPeticionesProducto.php' class='carrito-container'>";
+                    print "<form method='POST' action='../Controlador/ControlPeticionesProducto.php' class='product'>";
                         print "<div class='product-info'>";
-                        $id = $carrito[$i];
-                        print "<div class='product-data'>";
-                        print "<span class='product-name'>" . $producto->getNombre() . "</span>";
-                        print "<input type='text' class='product-id' name='id-producto' value='#$id' readonly>";
-                        print "</div>";
+                            $id = $carrito[$i];
+                            print "<div class='product-data'>";
+                                print "<span class='product-name'>" . $producto->getNombre() . "</span>";
+                                print "<input type='text' class='product-id' name='id-producto' value='#$id' readonly>";
+                            print "</div>";
                         print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
                         print "</div>";
                         print "<hr/>";
                         print "<span class='product-desc'>". $producto->getDescripcion() . "</span>";
 
-                        print "<input  name='id-carrito' value='$i'>";
+                        print "<input type='hidden' name='id-carrito' value='$i'>";
 
-                        print "<button type='submit' value='eliminarid' name='action-button'><img src='../Recursos/Imagenes/shopping-cart.png' alt='shopping-cart-icon'></button>";
-                        print "</form>";
-                    }
-
+                        print "<button type='submit' value='eliminarid' name='action-button'><img src='../Recursos/Imagenes/delete-product.png' alt='delete-icon'></button>";
+                    print "</form>";
                 }
             }
+        } else {
+            print "<div class='title-group'>";
+                print "<h1>There are no products !</h1>";
+                print "<span>Go check our catalog</span>";
+            print "</div>";
+        }
         ?>
-        <button type="submit" name="action-button" value="eliminartodos">ELIMINAR TODOS</button>
-    </form>
+    </div>
+
+    <?php
+        if (isset($_SESSION["listaCarrito"]) && count($_SESSION["listaCarrito"]) > 0) {
+            if (isEmpty($_SESSION["listaCarrito"])) {
+                print "<div class='title-group'>";
+                    print "<h1>There are no products !</h1>";
+                    print "<span>Go check our catalog</span>";
+                print "</div>";
+            } else {
+                print "<form method='POST' action='../Controlador/ControlPeticionesProducto.php'>";
+                    print "<button type='submit' name='action-button' value='eliminartodos' class='delete-all'>ELIMINAR TODOS</button>";
+                print "</form>";
+            }
+        }
+    ?>
 </div>
 
 <footer class="main-footer">

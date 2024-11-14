@@ -56,7 +56,7 @@
                                 print "<input type='text' class='product-id' name='id-producto' value='#$id' readonly>";
                             print "</div>";
                             print "<span class='product-price'>" . $producto->getPrecio() . " €</span>";
-                        print "</div>";
+                            print "</div>";
 
                         if ($producto->getPrecio() < 10) {
                             print "<div class='product-label sale'>";
