@@ -74,7 +74,7 @@ switch ($button) {
         $id = isset($_POST["id-producto"]) ? $_POST["id-producto"] : "";
         $id = str_replace("#", "", $id);
         $controlCarrito->agregarCarrito($id);
-        header("Location: ../Vista/carrito.php");
+        header("Location: ../Vista/index.php");
         break;
     case "eliminarid":
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
