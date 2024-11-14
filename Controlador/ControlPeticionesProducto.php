@@ -4,10 +4,17 @@ session_start();
 
 require_once "ControlProducto.php";
 require_once '../Modelo/ProductosDTO.php';
+require_once "ControlCarrito.php";
+
+if (!isset($_SESSION['listaCarrito'])) {
+    $_SESSION['listaCarrito'] = [];
+}
 
 $button = isset($_POST["action-button"]) ? $_POST["action-button"] : "";
 
 $controlProducto = new ControlProducto();
+
+$controlCarrito = new ControlCarrito();
 
 switch ($button) {
     case "agregar":
@@ -64,6 +71,15 @@ switch ($button) {
         }
         break;
     case "carrito":
+        $id = isset($_POST["id-producto"]) ? $_POST["id"] : "";
+        $controlCarrito->agregarCarrito($id);
+        break;
+    case "eliminarid":
+        $id = isset($_POST["id"]) ? $_POST["id"] : "";
+        $controlCarrito->eliminarUnoCarrito($id);
+        break;
+    case "eliminartodos":
+        $controlCarrito->eliminarTodosCarrito();
         break;
 }
 ?>
