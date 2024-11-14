@@ -14,7 +14,7 @@ class ControlCarrito
 
     public function eliminarUnoCarrito($id) {
         if (isset($_SESSION['listaCarrito'][$id])) {
-            unset($_SESSION['listaCarrito'][$id]);
+            $_SESSION['listaCarrito'][$id] = null;
         }
     }
 

@@ -45,7 +45,7 @@ $controlProducto = new ControlProducto();
                 $carrito = $_SESSION["listaCarrito"];
 
                 for ($i = 0; $i < count($carrito); $i++) {
-                    if (isset($carrito[$i])) {
+                    if ($carrito[$i] != null) {
                         $producto = $controlProducto->getProducto($carrito[$i]);
 
                         print "<form method='POST' action='../Controlador/ControlPeticionesProducto.php' class='carrito-container'>";
