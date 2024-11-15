@@ -5,7 +5,7 @@ class Database
     private static $servername = "localhost:3306";
     private static $username = "root";
     private static $password = "";
-    private static $dbname = "pruebas";
+    private static $dbname = "mi_tienda";
     private static $conn = null;
     public static function getConnection() {
         if (self::$conn === null) {
